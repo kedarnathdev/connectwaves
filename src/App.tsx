@@ -1,17 +1,11 @@
-
-import { Button } from 'primereact/button';
-
+import Home from "./components/Home";
 
 function App() {
-
   return (
     <>
-    <Button label="Submit" />
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Home />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
