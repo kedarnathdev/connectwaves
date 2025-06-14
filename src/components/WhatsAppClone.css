@@ -1,0 +1,111 @@
+.wa-container {
+  display: flex;
+  height: 100vh;
+  background-color: #ece5dd;
+}
+
+.wa-contacts {
+  width: 30%;
+  min-width: 200px;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.wa-contacts-scroll {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.wa-contact-item {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.wa-contact-item.active {
+  background-color: #dcf8c6;
+}
+
+.wa-chat {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #e5ddd5;
+}
+
+.wa-header {
+  padding: 1rem;
+  background-color: #075e54;
+  color: white;
+  font-weight: bold;
+}
+
+.wa-messages {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wa-message {
+  max-width: 70%;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.wa-message.sent {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+.wa-message.received {
+  align-self: flex-start;
+  background-color: white;
+}
+
+.wa-timestamp {
+  font-size: 0.75rem;
+  text-align: right;
+  margin-top: 0.25rem;
+  color: gray;
+}
+
+.wa-input {
+  display: flex;
+  padding: 0.5rem;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+}
+
+.wa-text-input {
+  flex-grow: 1;
+  margin-right: 0.5rem;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .wa-container {
+    flex-direction: column;
+  }
+
+  .wa-contacts {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .wa-chat {
+    height: calc(100vh - 200px); /* Approx height adjustment */
+  }
+}
+
+.wa-messages {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}

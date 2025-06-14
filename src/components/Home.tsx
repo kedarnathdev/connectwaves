@@ -1,7 +1,4 @@
-import { TabPanel, TabView } from "primereact/tabview";
-import Register from "./Register";
-import Login from "./Login";
-import ContactsWindows from "./ContactsWindows";
+import WhatsAppClone from "./WhatsAppClone";
 
 export default function Home() {
   return (
@@ -14,7 +11,7 @@ export default function Home() {
           <Register />
         </TabPanel>
       </TabView> */}
-      <ContactsWindows />
+      <WhatsAppClone />
     </>
   );
 }

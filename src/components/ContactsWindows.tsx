@@ -1,13 +1,10 @@
 import { ListBox } from "primereact/listbox";
-import { Panel } from "primereact/panel";
 import { useEffect, useState } from "react";
-import ChatWindow from "./ChatWindow";
-
-const fakeContacts = [{ userName: "Alice" }, { userName: "Bob" }];
 
 export default function ContactsWindows() {
-  const [contacts, setContacts] = useState(fakeContacts);
+  const [contacts, setContacts] = useState([]);
   const [selectedContact, setSelectedContact] = useState(null);
+
   useEffect(() => {
     getcontacts();
   }, []);
@@ -35,32 +32,13 @@ export default function ContactsWindows() {
 
   return (
     <>
-      <div style={{ display: "flex", height: "100vh" }}>
-        {/* ContactsWindow */}
-        <div
-          style={{
-            width: "250px",
-            borderRight: "1px solid #ccc",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Panel header="Contacts" style={{ flex: "1 1 auto", margin: 0 }}>
-            {/* Scrollable Area */}
-            <div style={{ height: "calc(100vh - 100px)", overflowY: "auto" }}>
-              <ListBox
-                value={selectedContact}
-                options={contacts}
-                onChange={(e) => setSelectedContact(e.value)}
-                optionLabel="userName"
-                style={{ width: "100%" }}
-              />
-            </div>
-          </Panel>
-        </div>
-
-        <ChatWindow selectedContact={selectedContact} />
-      </div>
+      <ListBox
+        value={selectedContact}
+        options={contacts}
+        onChange={(e) => setSelectedContact(e.value)}
+        optionLabel="userName"
+        style={{ width: "15rem" }}
+      />
     </>
   );
 }
